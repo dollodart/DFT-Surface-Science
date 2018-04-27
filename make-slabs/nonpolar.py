@@ -11,7 +11,7 @@ def sl(bas,fname,mm,nn,pp,pp0):
 #				rndpert=np.random.rand(3)/100 # visualization in VESTA can be sensitive to small perturbations
 				rndpert=np.zeros(3)
 				ap.append(bas+np.dot(np.array([m,n,p]),vecs) + rndpert)
-	np.savetxt(fname,ap)
+	np.savetxt(fname,np.squeeze(ap))
 def nsl(i,f):
 	g = open(f,'w')
 	g.write(str(i))
