@@ -2,15 +2,13 @@ import numpy as np
 import sys
 sys.path.insert(0, '/root/temp/funcs') # change to pwd of machine
 from funcs import rep, rot, lsave, genPOSCAR
-# eventually fix array dimensioning
 
 lvecs = np.genfromtxt('in/_lvecs')
-
 bases=np.genfromtxt('in/_bases')
 lst=[]
+
 for i in range(8):
 	lst.append(bases[i])
-
 lst2=[]
 for i in lst:
 	lst2.append(rep(i,lvecs,1,1,5))
