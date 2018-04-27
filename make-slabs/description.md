@@ -3,7 +3,7 @@ This code creates supercells for slabs with varying thickness and a vacuum spaci
 It is now possible to place adsorbates at the bottom and top surface.
 Run the adsorbate python script before running the bash script.
 The advantage is not necessarily in making the exact POSCAR file with the adsorbates positions.
-Cne can manually edit positions to obtain lower coverage by removing entries, for example (remember to update the header containing atom numbers). 
+One can manually edit positions to obtain lower coverage by removing entries, for example (remember to update the header containing atom numbers). 
 
 Note that the non-polar case has spurious odd numbered surfaces from borrowing the polar script. This may be edited in the future.
 

@@ -36,4 +36,4 @@ for p in range(pp):
 	nsl(mm*nn,dr + str(p) + 'badsnum') 
 
 
-nsl('S N','pslabs/ads_id')
+nsl('S S','pslabs/ads_id')
