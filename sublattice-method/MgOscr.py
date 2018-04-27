@@ -22,4 +22,4 @@ for i in sublats:
 
 scvecs=lvecs + np.array([[0,0,0],[0,0,0],[0,0,15+lvecs[2,2]*4]]) # vacuum spacing
 
-genPOSCAR(sublats,scvecs,'Magnesium Oxide 4 Slab System')
+genPOSCAR(sublats,scvecs,sys_name='Magnesium Oxide 4 Slab System',POS_name='MgOPOSCAR.vasp')

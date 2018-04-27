@@ -1,11 +1,11 @@
 import numpy as np
-def rep(bas,vecs,na,nb,nz):
+def rep(bas,vecs,na,nb,nc):
 	acc=[]
 	for i in range(na):
 		for j in range(nb):
-			for k in range(nz):
-				mult=[i,j,k]
-				pos=np.dot(vecs,mult)+bas			
+			for k in range(nc):
+				mult=np.array([i,j,k])
+				pos=np.dot(mult,vecs)+bas			
 				acc.append(pos)
 	return acc
 
@@ -34,8 +34,9 @@ def rot(vecs,yaw,pitch,roll): # about z, about y, about x
 
 def lsave(vecs,fname):
 	np.savetxt('.dump/'+fname,vecs)
-def genPOSCAR(sublats,scvecs,sys_name=None):
+def genPOSCAR(sublats,scvecs,sys_name=None,POS_name=None):
 	sys_name = sys_name or 'no name given'
+	POS_name = POS_name or 'POSCAR'
 	lat=[]
 	nums=[]
 	specs=[]
@@ -54,8 +55,7 @@ def genPOSCAR(sublats,scvecs,sys_name=None):
 
 	g=open('.dump/lat','r')
 	h=open('.dump/scvecs','r')
-	f=open('out/POSCAR','w')
-
+	f=open('out/' + POS_name,'w')
 	f.write(sys_name + '\n')
 	f.write('1.0\n')
 
