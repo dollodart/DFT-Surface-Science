@@ -3,8 +3,8 @@ import sys
 sys.path.insert(0, '/root/temp/funcs') # change to pwd of machine
 from funcs import rep, rot, lsave, genPOSCAR
 
-lvecs = np.genfromtxt('in/_lvecs')
-bases=np.genfromtxt('in/_bases')
+lvecs = np.genfromtxt('../in/_lvecs')
+bases=np.genfromtxt('../in/_bases')
 lst=[]
 
 for i in range(8):
