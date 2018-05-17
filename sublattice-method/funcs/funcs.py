@@ -31,9 +31,9 @@ def rot(vecs,yaw,pitch,roll): # about z, about y, about x
 		rvec=np.dot(vec,R) #left multiplying row vector		
 		rvecs.append(rvec)
 	return rvecs
-
+ddir='../.dump/'
 def lsave(vecs,fname):
-	np.savetxt('.dump/'+fname,vecs)
+	np.savetxt(ddir+fname,vecs)
 def genPOSCAR(sublats,scvecs,sys_name=None,POS_name=None):
 	sys_name = sys_name or 'no name given'
 	POS_name = POS_name or 'POSCAR'
@@ -44,18 +44,18 @@ def genPOSCAR(sublats,scvecs,sys_name=None,POS_name=None):
 	tt=dict.fromkeys(map(ord, '1234567890'),None)
 
 	for sublat in sublats:
-		sl=np.genfromtxt('.dump/'+sublat)
+		sl=np.genfromtxt(ddir+sublat)
 		sln=int(sl.size/3) # 3 coordinates per atom
 		lat.append(sl)
 		nums.append(str(sln)+' ')
 		specs.append(sublat.translate(tt)+' ')
 	stack=np.vstack(lat)
-	np.savetxt('.dump/lat',stack)
-	np.savetxt('.dump/scvecs',scvecs)
+	np.savetxt(ddir + 'lat',stack)
+	np.savetxt(ddir + 'scvecs',scvecs)
 
-	g=open('.dump/lat','r')
-	h=open('.dump/scvecs','r')
-	f=open('out/' + POS_name,'w')
+	g=open(ddir + 'lat','r')
+	h=open(ddir + 'scvecs','r')
+	f=open('../out/' + POS_name,'w')
 	f.write(sys_name + '\n')
 	f.write('1.0\n')
 
