@@ -1,0 +1,2 @@
+sublats = ['X1', 'X2', 'Y1', 'Z1', 'Z2', 'Z3']
+# have repeat elements come after each other, ordered in ascending number, always labeled with element name and number even if only 1 of element

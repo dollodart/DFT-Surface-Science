@@ -22,7 +22,7 @@ lsave(lsto2,'O2')
 
 sublats=['Zn1','Zn2','O1','O2']
 
-rng=np.arange(0.85,1.15,0.0125)
+rng=np.arange(0.95,1.055,0.005)
 o=0
 for i in rng:
     o+=1
